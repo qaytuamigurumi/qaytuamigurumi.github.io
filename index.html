@@ -13,8 +13,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20261028">
-  <script defer src="main.js?v=20261028"></script>
+  <link rel="stylesheet" href="styles.css?v=20261103b">
+  <script defer src="main.js?v=20261103b"></script>
 </head>
 <body>
 
@@ -38,7 +38,7 @@
     <nav class="nav__links" aria-label="Principal">
       <a href="#ocasiones">Recuerdos</a>
       <a href="#coleccion">Colección</a>
-      <a href="#nacimientos">Nacimientos</a>
+      <a href="#coleccion" data-show="nacimientos">Nacimientos</a>
       <a href="#proceso">Cómo pedir</a>
       <a href="#historia">Nosotros</a>
     </nav>
@@ -49,7 +49,7 @@
   <div class="mobile-menu" id="mobile-menu" hidden>
     <a href="#ocasiones">Recuerdos</a>
     <a href="#coleccion">Colección</a>
-    <a href="#nacimientos">Nacimientos</a>
+    <a href="#coleccion" data-show="nacimientos">Nacimientos</a>
     <a href="#proceso">Cómo pedir</a>
     <a href="#historia">Nosotros</a>
     <a class="btn" href="https://wa.me/51943772313?text=Hola%20Qaytu%2C%20quiero%20hacer%20un%20pedido" target="_blank" rel="noopener">Pedir por WhatsApp</a>
@@ -153,7 +153,10 @@
           <button class="chip" data-filter="recuerdos" role="tab" aria-selected="false">Recuerdos</button>
           <button class="chip chip--xmas" data-filter="navidad" role="tab" aria-selected="false"><span class="lights" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="tree" aria-hidden="true">🎄</span>Navidad</button>
           <button class="chip" data-filter="nacimientos" role="tab" aria-selected="false">Nacimientos</button>
+          <button class="chip" data-filter="santos" role="tab" aria-selected="false">Santos y vírgenes</button>
           <button class="chip" data-filter="flores" role="tab" aria-selected="false">Flores</button>
+          <button class="chip" data-filter="separadores" role="tab" aria-selected="false">Separadores de libros</button>
+          <button class="chip" data-filter="accesorios" role="tab" aria-selected="false">Porta celulares</button>
         </div>
       </header>
 
@@ -195,28 +198,54 @@
         <button class="tile" data-cat="navidad"><img src="assets/img/muneco-bufanda.png" alt="Muñeco de nieve con bufanda roja" loading="lazy"><span>Muñeco de nieve</span></button>
         <button class="tile" data-cat="nacimientos"><img src="assets/img/nacimiento-dulce.png" alt="Nacimiento de rasgos dulces" loading="lazy"><span>Nacimiento dulce</span></button>
         <button class="tile" data-cat="nacimientos"><img src="assets/img/nacimiento-mini.png" alt="Nacimiento mini con buey y burrito" loading="lazy"><span>Nacimiento mini</span></button>
-      </div>
-    </section>
-
-    <!-- ============ NACIMIENTOS ============ -->
-    <section class="nativity" id="nacimientos">
-      <div class="nativity__sticky">
-      <div class="nativity__intro reveal">
-        <p class="eyebrow eyebrow--light">Temporada navideña</p>
-        <h2>Nacimientos que <em>pasan de generación</em> en generación.</h2>
-        <p>Cada set incluye a la Sagrada Familia y puede completarse con reyes magos, pastores, ángel y animalitos. Hazlo tuyo eligiendo el estilo y los colores.</p>
-        <a class="btn btn--gold" href="https://wa.me/51943772313?text=Hola%20Qaytu%2C%20quiero%20informaci%C3%B3n%20sobre%20los%20nacimientos" target="_blank" rel="noopener">Consultar por un nacimiento</a>
-        <p class="nativity__hint"><span class="hint-swipe">Desliza para ver los estilos →</span><span class="hint-scroll">Sigue bajando para ver los estilos ↓</span></p>
-      </div>
-      <div class="nativity__rail" tabindex="0" aria-label="Estilos de nacimiento">
-        <figure><img src="assets/img/nacimiento-camellos.webp" alt="Nacimiento con camellos" loading="lazy"><figcaption><b>Gran nacimiento</b> con reyes, camellos y ángel</figcaption></figure>
-        <figure><img src="assets/img/nacimiento-clasico.png" alt="Nacimiento clásico" loading="lazy"><figcaption><b>Clásico</b> de colores vivos</figcaption></figure>
-        <figure><img src="assets/img/nacimiento-burrito.png" alt="Nacimiento con burrito" loading="lazy"><figcaption><b>Tradicional</b> con buey y burrito</figcaption></figure>
-        <figure><img src="assets/img/nacimiento-dulce.png" alt="Nacimiento dulce" loading="lazy"><figcaption><b>Dulce</b> con sandalias y detalles dorados</figcaption></figure>
-        <figure><img src="assets/img/nacimiento-pop.png" alt="Nacimiento pop" loading="lazy"><figcaption><b>Pop</b> de ojos grandes</figcaption></figure>
-        <figure><img src="assets/img/nacimiento-mini.png" alt="Nacimiento mini" loading="lazy"><figcaption><b>Mini</b> para espacios pequeños</figcaption></figure>
-      </div>
-      <div class="nativity__bar" aria-hidden="true"><span></span></div>
+        <button class="tile" data-cat="flores"><img src="assets/img/flor-lirio-amarillo.jpg" alt="Lirio amarillo en maceta tejido a crochet" loading="lazy" width="541" height="1000"><span>Lirio amarillo en maceta</span></button>
+        <button class="tile" data-cat="flores"><img src="assets/img/flor-lirios.jpg" alt="Lirios rosado y amarillo tejido a crochet" loading="lazy" width="1000" height="955"><span>Lirios rosado y amarillo</span></button>
+        <button class="tile" data-cat="flores"><img src="assets/img/flor-violeta-lila.jpg" alt="Violeta africana lila tejido a crochet" loading="lazy" width="748" height="1000"><span>Violeta africana lila</span></button>
+        <button class="tile" data-cat="flores"><img src="assets/img/flor-violeta-blanca.jpg" alt="Violeta africana blanca tejido a crochet" loading="lazy" width="699" height="1000"><span>Violeta africana blanca</span></button>
+        <button class="tile" data-cat="flores"><img src="assets/img/flor-violeta-morada.jpg" alt="Violeta africana morada tejido a crochet" loading="lazy" width="732" height="1000"><span>Violeta africana morada</span></button>
+        <button class="tile" data-cat="flores"><img src="assets/img/flor-canasta-naranja.jpg" alt="Canasta de flores naranjas tejido a crochet" loading="lazy" width="1000" height="974"><span>Canasta de flores naranjas</span></button>
+        <button class="tile" data-cat="flores"><img src="assets/img/flor-canasta-azul.jpg" alt="Canasta de flores azules tejido a crochet" loading="lazy" width="1000" height="976"><span>Canasta de flores azules</span></button>
+        <button class="tile" data-cat="flores"><img src="assets/img/flor-centro-mesa.jpg" alt="Centro de mesa floral tejido a crochet" loading="lazy" width="1000" height="477"><span>Centro de mesa floral</span></button>
+        <button class="tile" data-cat="flores"><img src="assets/img/flor-orquidea-lila.jpg" alt="Orquídea lila tejido a crochet" loading="lazy" width="566" height="1000"><span>Orquídea lila</span></button>
+        <button class="tile" data-cat="flores"><img src="assets/img/flor-orquidea-amarilla.jpg" alt="Orquídea amarilla tejido a crochet" loading="lazy" width="621" height="1000"><span>Orquídea amarilla</span></button>
+        <button class="tile" data-cat="flores"><img src="assets/img/flor-orquidea-durazno.jpg" alt="Orquídea durazno tejido a crochet" loading="lazy" width="595" height="1000"><span>Orquídea durazno</span></button>
+        <button class="tile" data-cat="flores"><img src="assets/img/flor-tulipanes-colores.jpg" alt="Tulipanes de colores tejido a crochet" loading="lazy" width="670" height="1000"><span>Tulipanes de colores</span></button>
+        <button class="tile" data-cat="munecos"><img src="assets/img/muneca-conejito.jpg" alt="Muñeca con capucha de conejo tejido a crochet" loading="lazy" width="680" height="1000"><span>Muñeca con capucha de conejo</span></button>
+        <button class="tile" data-cat="munecos"><img src="assets/img/mafalda.jpg" alt="Mafalda tejido a crochet" loading="lazy" width="1000" height="1000"><span>Mafalda</span></button>
+        <button class="tile" data-cat="munecos"><img src="assets/img/intensamente.jpg" alt="Personajes de Intensamente tejido a crochet" loading="lazy" width="1000" height="524"><span>Personajes de Intensamente</span></button>
+        <button class="tile" data-cat="munecos"><img src="assets/img/sirenitas.jpg" alt="Sirenitas tejido a crochet" loading="lazy" width="1000" height="524"><span>Sirenitas</span></button>
+        <button class="tile" data-cat="munecos"><img src="assets/img/gatita-lentes.jpg" alt="Gatita con lentes tejido a crochet" loading="lazy" width="1000" height="1000"><span>Gatita con lentes</span></button>
+        <button class="tile" data-cat="munecos"><img src="assets/img/muneca-capucha-roja.jpg" alt="Muñeca de capucha roja tejido a crochet" loading="lazy" width="800" height="1000"><span>Muñeca de capucha roja</span></button>
+        <button class="tile" data-cat="munecos"><img src="assets/img/charlie-brown.jpg" alt="Charlie Brown y sus amigos tejido a crochet" loading="lazy" width="1000" height="524"><span>Charlie Brown y sus amigos</span></button>
+        <button class="tile" data-cat="munecos"><img src="assets/img/llamitas.jpg" alt="Llamitas tejido a crochet" loading="lazy" width="924" height="1000"><span>Llamitas</span></button>
+        <button class="tile" data-cat="munecos"><img src="assets/img/chavo-del-8.jpg" alt="El Chavo y sus amigos tejido a crochet" loading="lazy" width="1000" height="524"><span>El Chavo y sus amigos</span></button>
+        <button class="tile" data-cat="munecos"><img src="assets/img/winnie-pooh.jpg" alt="Winnie Pooh y sus amigos tejido a crochet" loading="lazy" width="1000" height="1000"><span>Winnie Pooh y sus amigos</span></button>
+        <button class="tile" data-cat="santos"><img src="assets/img/santo-corazon-maria.jpg" alt="Inmaculado Corazón de María tejido a crochet" loading="lazy" width="708" height="1000"><span>Inmaculado Corazón de María</span></button>
+        <button class="tile" data-cat="santos"><img src="assets/img/santo-virgen-rosario.jpg" alt="Virgen María con rosario tejido a crochet" loading="lazy" width="750" height="1000"><span>Virgen María con rosario</span></button>
+        <button class="tile" data-cat="santos"><img src="assets/img/santo-virgen-maria.jpg" alt="Virgen María tejido a crochet" loading="lazy" width="667" height="1000"><span>Virgen María</span></button>
+        <button class="tile" data-cat="santos"><img src="assets/img/santo-virgen-guadalupe.jpg" alt="Virgen de Guadalupe tejido a crochet" loading="lazy" width="700" height="1000"><span>Virgen de Guadalupe</span></button>
+        <button class="tile" data-cat="santos"><img src="assets/img/santo-santa-rosa.jpg" alt="Santa Rosa de Lima tejido a crochet" loading="lazy" width="652" height="1000"><span>Santa Rosa de Lima</span></button>
+        <button class="tile" data-cat="santos"><img src="assets/img/santo-san-martin.jpg" alt="San Martín de Porres tejido a crochet" loading="lazy" width="632" height="1000"><span>San Martín de Porres</span></button>
+        <button class="tile" data-cat="santos"><img src="assets/img/santo-buen-pastor.jpg" alt="Jesús Buen Pastor tejido a crochet" loading="lazy" width="1000" height="1000"><span>Jesús Buen Pastor</span></button>
+        <button class="tile" data-cat="nacimientos"><img src="assets/img/nacimiento-pesebre.jpg" alt="Nacimiento con pesebre tejido a crochet" loading="lazy" width="1000" height="524"><span>Nacimiento con pesebre</span></button>
+        <button class="tile" data-cat="nacimientos"><img src="assets/img/nacimiento-pequeno.jpg" alt="Nacimiento pequeño tejido a crochet" loading="lazy" width="1000" height="473"><span>Nacimiento pequeño</span></button>
+        <button class="tile" data-cat="nacimientos"><img src="assets/img/reyes-magos.jpg" alt="Reyes Magos tejido a crochet" loading="lazy" width="1000" height="956"><span>Reyes Magos</span></button>
+        <button class="tile" data-cat="nacimientos"><img src="assets/img/nacimiento-establo.jpg" alt="Nacimiento con establo tejido a crochet" loading="lazy" width="1000" height="1000"><span>Nacimiento con establo</span></button>
+        <button class="tile" data-cat="navidad"><img src="assets/img/arbol-navidad.jpg" alt="Árbol de Navidad tejido a crochet" loading="lazy" width="1000" height="1000"><span>Árbol de Navidad</span></button>
+        <button class="tile" data-cat="navidad"><img src="assets/img/corona-navidad.jpg" alt="Corona navideña tejido a crochet" loading="lazy" width="562" height="1000"><span>Corona navideña</span></button>
+        <button class="tile" data-cat="recuerdos"><img src="assets/img/mordedor-osito.jpg" alt="Mordedor de osito tejido a crochet" loading="lazy" width="750" height="1000"><span>Mordedor de osito</span></button>
+        <button class="tile" data-cat="recuerdos"><img src="assets/img/muneca-vestido-blanco.jpg" alt="Muñeca de vestido blanco tejido a crochet" loading="lazy" width="1000" height="1000"><span>Muñeca de vestido blanco</span></button>
+        <button class="tile" data-cat="recuerdos"><img src="assets/img/mini-ropita-bebe.jpg" alt="Mini ropita de bebé tejido a crochet" loading="lazy" width="960" height="753"><span>Mini ropita de bebé</span></button>
+        <button class="tile" data-cat="recuerdos"><img src="assets/img/mini-vestiditos.jpg" alt="Mini vestiditos tejido a crochet" loading="lazy" width="960" height="756"><span>Mini vestiditos</span></button>
+        <button class="tile" data-cat="recuerdos"><img src="assets/img/angelitos-alas.jpg" alt="Angelitos con alas tejido a crochet" loading="lazy" width="1000" height="561"><span>Angelitos con alas</span></button>
+        <button class="tile" data-cat="separadores"><img src="assets/img/separador-clavel-rosado.jpg" alt="Separador clavel rosado tejido a crochet" loading="lazy" width="434" height="1000"><span>Separador clavel rosado</span></button>
+        <button class="tile" data-cat="separadores"><img src="assets/img/separador-clavel-fucsia.jpg" alt="Separador clavel fucsia tejido a crochet" loading="lazy" width="448" height="1000"><span>Separador clavel fucsia</span></button>
+        <button class="tile" data-cat="separadores"><img src="assets/img/separador-flor-naranja.jpg" alt="Separador flor naranja tejido a crochet" loading="lazy" width="470" height="1000"><span>Separador flor naranja</span></button>
+        <button class="tile" data-cat="separadores"><img src="assets/img/separador-gatito-verde.jpg" alt="Separador gatito verde tejido a crochet" loading="lazy" width="442" height="1000"><span>Separador gatito verde</span></button>
+        <button class="tile" data-cat="separadores"><img src="assets/img/separador-gatito-naranja.jpg" alt="Separador gatito naranja tejido a crochet" loading="lazy" width="453" height="1000"><span>Separador gatito naranja</span></button>
+        <button class="tile" data-cat="accesorios"><img src="assets/img/porta-celular-conejito.jpg" alt="Porta celular conejito tejido a crochet" loading="lazy" width="750" height="1000"><span>Porta celular conejito</span></button>
+        <button class="tile" data-cat="accesorios"><img src="assets/img/porta-celular-chanchito.jpg" alt="Porta celular chanchito tejido a crochet" loading="lazy" width="750" height="1000"><span>Porta celular chanchito</span></button>
+        <button class="tile" data-cat="accesorios"><img src="assets/img/porta-celular-beige.jpg" alt="Porta celular beige tejido a crochet" loading="lazy" width="750" height="1000"><span>Porta celular beige</span></button>
       </div>
     </section>
 
