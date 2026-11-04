@@ -67,6 +67,7 @@
   function initFilters() {
     var chips = document.querySelectorAll('.chip');
     var tiles = document.querySelectorAll('.tile');
+    var gallery = document.getElementById('gallery');
     chips.forEach(function (chip) {
       chip.addEventListener('click', function () {
         var f = chip.dataset.filter;
@@ -81,14 +82,18 @@
           t.classList.remove('is-entering');
           if (show) { void t.offsetWidth; t.classList.add('is-entering'); }
         });
+        // Bajar solo hasta donde empiezan las fotos (el margen del menú fijo
+        // lo pone scroll-padding-top en el CSS)
+        gallery.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
     });
-    // Botones externos que activan un filtro (p. ej. el aviso navideño)
+    // Botones y enlaces externos que activan un filtro (aviso navideño, menú)
     document.querySelectorAll('[data-show]').forEach(function (btn) {
-      btn.addEventListener('click', function () {
+      btn.addEventListener('click', function (e) {
         var chip = document.querySelector('.chip[data-filter="' + btn.dataset.show + '"]');
-        if (chip) chip.click();
-        document.getElementById('gallery').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (!chip) return;
+        e.preventDefault();
+        chip.click();
       });
     });
   }
