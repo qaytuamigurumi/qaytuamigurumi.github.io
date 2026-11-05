@@ -13,8 +13,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20261104b">
-  <script defer src="main.js?v=20261104b"></script>
+  <link rel="stylesheet" href="styles.css?v=20261104c">
+  <script defer src="main.js?v=20261104c"></script>
 </head>
 <body>
 
@@ -306,15 +306,62 @@
     <section class="cta" id="contacto">
       <div class="cta__inner reveal">
         <div class="rising" aria-hidden="true"><i>♥</i><i>♥</i><i>♥</i><i>♥</i><i>♥</i><i>♥</i><i>♥</i><i>♥</i></div>
-        <img src="assets/img/logo.png" alt="" class="cta__logo" loading="lazy">
-        <p class="eyebrow eyebrow--light">Pedidos por WhatsApp</p>
-        <h2>¿Qué quieres que tejamos para ti?</h2>
-        <a class="cta__phone" href="https://wa.me/51943772313?text=Hola%20Qaytu%2C%20quiero%20hacer%20un%20pedido" target="_blank" rel="noopener">943 772 313</a>
-        <p class="cta__loc">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
-          Cajamarca, Perú
-        </p>
-        <a class="btn btn--light" href="https://wa.me/51943772313?text=Hola%20Qaytu%2C%20quiero%20hacer%20un%20pedido" target="_blank" rel="noopener">Escribir ahora</a>
+
+        <div class="cta__intro">
+          <p class="eyebrow eyebrow--light">Arma tu pedido</p>
+          <h2>Cuéntanos qué <em>soñaste.</em></h2>
+          <p class="cta__lead">Llena lo que sepas y te armamos el mensaje para WhatsApp. Solo tienes que tocar enviar.</p>
+          <div class="cta__contact">
+            <img src="assets/img/logo.png" alt="" class="cta__logo" loading="lazy">
+            <div>
+              <a class="cta__phone" href="https://wa.me/51943772313?text=Hola%20Qaytu%2C%20quiero%20hacer%20un%20pedido" target="_blank" rel="noopener">943 772 313</a>
+              <p class="cta__loc">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+                Cajamarca, Perú
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <form class="order" id="order-form" novalidate>
+          <label class="order__field">
+            <span>Tu nombre</span>
+            <input type="text" name="nombre" placeholder="Ej. María" autocomplete="given-name">
+          </label>
+          <label class="order__field">
+            <span>¿Para qué ocasión?</span>
+            <select name="ocasion">
+              <option value="">Elige una opción</option>
+              <option>Bautizo</option>
+              <option>Primera comunión</option>
+              <option>Matrimonio</option>
+              <option>Baby shower</option>
+              <option>Cumpleaños</option>
+              <option>Navidad</option>
+              <option>Regalo</option>
+              <option>Otro</option>
+            </select>
+          </label>
+          <div class="order__row">
+            <label class="order__field">
+              <span>Cantidad</span>
+              <input type="number" name="cantidad" min="1" inputmode="numeric" placeholder="Ej. 12">
+            </label>
+            <label class="order__field">
+              <span>¿Para cuándo?</span>
+              <input type="date" name="fecha">
+            </label>
+          </div>
+          <label class="order__field">
+            <span>¿Qué te gustaría?</span>
+            <textarea name="detalle" rows="3" placeholder="Ej. angelitos con aureola dorada y el nombre del bebé"></textarea>
+          </label>
+          <button type="submit" class="btn order__send">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3h11A2.5 2.5 0 0 1 20 5.5v8a2.5 2.5 0 0 1-2.5 2.5H10l-4.2 3.6c-.5.4-1.3.1-1.3-.6V16A2.5 2.5 0 0 1 4 13.5z"/></svg>
+            Enviar por WhatsApp
+          </button>
+          <p class="order__note">Se abrirá WhatsApp con tu mensaje listo. No guardamos tus datos.</p>
+        </form>
       </div>
     </section>
 

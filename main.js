@@ -394,6 +394,35 @@
     });
   }
 
+  // Formulario "Arma tu pedido": junta lo que llenó la persona en un mensaje
+  // y abre WhatsApp con ese texto. No se guarda ni se envía nada a otro lugar.
+  function initOrderForm() {
+    var form = document.getElementById('order-form');
+    if (!form) return;
+    var fecha = form.elements.fecha;
+    var hoy = new Date();
+    fecha.min = hoy.getFullYear() + '-' + String(hoy.getMonth() + 1).padStart(2, '0') + '-' + String(hoy.getDate()).padStart(2, '0');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var v = function (name) { return (form.elements[name].value || '').trim(); };
+      var nombre = v('nombre');
+      var lineas = ['Hola Qaytu 👋' + (nombre ? ', soy ' + nombre + '.' : ''), 'Quiero hacer un pedido:'];
+      if (v('ocasion')) lineas.push('• Ocasión: ' + v('ocasion'));
+      if (v('cantidad')) lineas.push('• Cantidad: ' + v('cantidad'));
+      if (v('fecha')) {
+        var p = v('fecha').split('-');
+        lineas.push('• Para el: ' + p[2] + '/' + p[1] + '/' + p[0]);
+      }
+      if (v('detalle')) lineas.push('• Me gustaría: ' + v('detalle'));
+      lineas.push('¡Gracias!');
+
+      var url = 'https://wa.me/51943772313?text=' + encodeURIComponent(lineas.join('\n'));
+      var win = window.open(url, '_blank', 'noopener');
+      if (!win) window.location.href = url;
+    });
+  }
+
   function initYear() {
     var y = document.getElementById('year');
     if (y) y.textContent = new Date().getFullYear();
@@ -412,6 +441,7 @@
     safe(initTileTilt, 'tilt galería');
     safe(initBurst, 'corazones');
     safe(initPhone, 'teléfono');
+    safe(initOrderForm, 'formulario');
     safe(initFilters, 'filtros');
     safe(initLightbox, 'lightbox');
     safe(initRail, 'carril');
